@@ -1,0 +1,23 @@
+//如果出现Bug欢迎提交issues嘲笑作者((((
+anti-everysunshine{
+//目前只有阳光可以解除,那几个正在摸索怎么处理,顺便说一句:"谁能捐助我一个小米机器,某某盒子的操作逻辑我这个蒟蒻都不知道(抱头痛哭"
+package-name:["com.broaddeep.safe.childrennetguard"]
+bdc = get-phone-info(brand);
+if bdc == HUAWEI{
+       //向华为技术开发API传参,解除设置的安全策略(依赖NRSSM的HWSS库)
+       //奶一口:这就是他们所谓的"与华为深度合作"
+       do_HWShell_simplemode("policy unlock *");
+       get-bootshell = true;
+       //禁用辅助功能
+       disable_accessibility(com.broaddeep.safe.childrennetguard);
+       //禁用在其他应用上方显示,防患于未然
+       disable_drawoverortherapps(com.broaddeep.safe.childrennetguard);
+       userinterface_tell("请前往设置取消设备管理器");
+}
+if bdc != HUAWEI{
+      //不是华为的就直接标准操作
+      disable_accessibility(com.broaddeep.safe.childrennetguard);
+      disable_drawoverortherapps(com.broaddeep.safe.childrennetguard);
+      userinterface_tell("请前往设置取消设备管理器");
+}
+}

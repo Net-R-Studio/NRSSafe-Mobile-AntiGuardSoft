@@ -1,0 +1,8 @@
+plugininfo:{
+name:"NRS手机安全-反管控软件模块";
+Vis:"v1.8.5";
+}
+pluginmod:{
+import encret.list;
+do process;
+}
