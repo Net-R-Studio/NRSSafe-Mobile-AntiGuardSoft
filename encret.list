@@ -27,6 +27,6 @@ rinfo = root-info-lookup;
 if (rinfo==true){
        disable_accessibility(com.kidscare.child);
        userinterface_tell("请前往设置取消设备管理器");
-       //袋鼠家你怎么那么堕落啊,怎么倒闭了啊
+       //袋鼠家你怎么那么堕落啊,怎么倒闭了啊hhhc
 }
 }
