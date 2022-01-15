@@ -1,23 +1,32 @@
-//Èç¹û³öÏÖBug»¶Ó­Ìá½»issues³°Ğ¦×÷Õß((((
-anti-everysunshine{
-//Ä¿Ç°Ö»ÓĞÑô¹â¿ÉÒÔ½â³ı,ÄÇ¼¸¸öÕıÔÚÃşË÷ÔõÃ´´¦Àí,Ë³±ãËµÒ»¾ä:"Ë­ÄÜ¾èÖúÎÒÒ»¸öĞ¡Ã×»úÆ÷,Ä³Ä³ºĞ×ÓµÄ²Ù×÷Âß¼­ÎÒÕâ¸öÉXÉm¶¼²»ÖªµÀ(±§Í·Í´¿Ş"
+//å¦‚æœå‡ºç°Bugæ¬¢è¿æäº¤issueså˜²ç¬‘ä½œè€…((((
+anti-eversunshine{
+//ç›®å‰åªæœ‰é˜³å…‰ã€è¢‹é¼ å®¶å¯ä»¥è§£é™¤,é‚£å‡ ä¸ªæ­£åœ¨æ‘¸ç´¢æ€ä¹ˆå¤„ç†,é¡ºä¾¿è¯´ä¸€å¥:"è°èƒ½æåŠ©æˆ‘ä¸€ä¸ªå°ç±³æœºå™¨,æŸæŸç›’å­çš„æ“ä½œé€»è¾‘æˆ‘è¿™ä¸ªè’Ÿè’»éƒ½ä¸çŸ¥é“(æŠ±å¤´ç—›å“­"
 package-name:["com.broaddeep.safe.childrennetguard"]
 bdc = get-phone-info(brand);
 if bdc == HUAWEI{
-       //Ïò»ªÎª¼¼Êõ¿ª·¢API´«²Î,½â³ıÉèÖÃµÄ°²È«²ßÂÔ(ÒÀÀµNRSSMµÄHWSS¿â)
-       //ÄÌÒ»¿Ú:Õâ¾ÍÊÇËûÃÇËùÎ½µÄ"Óë»ªÎªÉî¶ÈºÏ×÷"
+       //å‘åä¸ºæŠ€æœ¯å¼€å‘APIä¼ å‚,è§£é™¤è®¾ç½®çš„å®‰å…¨ç­–ç•¥(ä¾èµ–NRSSMçš„HWSSåº“)
+       //å¥¶ä¸€å£:è¿™å°±æ˜¯ä»–ä»¬æ‰€è°“çš„"ä¸åä¸ºæ·±åº¦åˆä½œ"
        do_HWShell_simplemode("policy unlock *");
        get-bootshell = true;
-       //½ûÓÃ¸¨Öú¹¦ÄÜ
+       //ç¦ç”¨è¾…åŠ©åŠŸèƒ½
        disable_accessibility(com.broaddeep.safe.childrennetguard);
-       //½ûÓÃÔÚÆäËûÓ¦ÓÃÉÏ·½ÏÔÊ¾,·À»¼ÓÚÎ´È»
+       //ç¦ç”¨åœ¨å…¶ä»–åº”ç”¨ä¸Šæ–¹æ˜¾ç¤º,é˜²æ‚£äºæœªç„¶
        disable_drawoverortherapps(com.broaddeep.safe.childrennetguard);
-       userinterface_tell("ÇëÇ°ÍùÉèÖÃÈ¡ÏûÉè±¸¹ÜÀíÆ÷");
+       userinterface_tell("è¯·å‰å¾€è®¾ç½®å–æ¶ˆè®¾å¤‡ç®¡ç†å™¨");
 }
 if bdc != HUAWEI{
-      //²»ÊÇ»ªÎªµÄ¾ÍÖ±½Ó±ê×¼²Ù×÷
+      //ä¸æ˜¯åä¸ºçš„å°±ç›´æ¥æ ‡å‡†æ“ä½œ
       disable_accessibility(com.broaddeep.safe.childrennetguard);
       disable_drawoverortherapps(com.broaddeep.safe.childrennetguard);
-      userinterface_tell("ÇëÇ°ÍùÉèÖÃÈ¡ÏûÉè±¸¹ÜÀíÆ÷");
+      userinterface_tell("è¯·å‰å¾€è®¾ç½®å–æ¶ˆè®¾å¤‡ç®¡ç†å™¨");
+}
+}
+anti-kidscare{
+packge-name:["com.kidscare.child"]
+rinfo = root-info-lookup;
+if (rinfo==true){
+       disable_accessibility(com.kidscare.child);
+       userinterface_tell("è¯·å‰å¾€è®¾ç½®å–æ¶ˆè®¾å¤‡ç®¡ç†å™¨");
+       //è¢‹é¼ å®¶ä½ æ€ä¹ˆé‚£ä¹ˆå •è½å•Š,æ€ä¹ˆå€’é—­äº†å•Š
 }
 }
